@@ -3,9 +3,9 @@ from tkinter import messagebox
 import random
 
 # Theme Constants
-BG_COLOR = "#000000"
-FG_COLOR = "#FFFFFF"
-ACCENT_COLOR = "#FF9800"
+BG_COLOR = "#1F1C2C"
+FG_COLOR = "#928DAB"
+ACCENT_COLOR = "#928DAB"
 FONT_FAMILY = "Arial"
 
 class NumberGuessingGame:
@@ -48,7 +48,7 @@ class NumberGuessingGame:
         self.entry = tk.Entry(
             self.root, 
             font=(FONT_FAMILY, 14), 
-            bg="#333333", 
+            bg=BG_COLOR, 
             fg=FG_COLOR, 
             insertbackground=FG_COLOR,
             justify="center"
@@ -62,9 +62,9 @@ class NumberGuessingGame:
             text="Guess", 
             command=self.check_guess, 
             bg=ACCENT_COLOR, 
-            fg="black",
+            fg=BG_COLOR,
             activebackground=ACCENT_COLOR,
-            activeforeground="black",
+            activeforeground=BG_COLOR,
             font=(FONT_FAMILY, 12, "bold"),
             padx=20, 
             pady=5,
@@ -89,9 +89,9 @@ class NumberGuessingGame:
             self.root, 
             text="Play Again", 
             command=self.start_new_game, 
-            bg="#444444", 
+            bg=BG_COLOR, 
             fg=FG_COLOR,
-            activebackground="#666666",
+            activebackground=BG_COLOR,
             activeforeground=FG_COLOR,
             font=(FONT_FAMILY, 10),
             padx=10, 
@@ -114,7 +114,7 @@ class NumberGuessingGame:
         guess_str = self.entry.get()
         
         if not guess_str.isdigit():
-            self.feedback_label.config(text="Please enter a valid number.", fg="red")
+            self.feedback_label.config(text="Please enter a valid number.", fg=FG_COLOR)
             return
 
         guess = int(guess_str)
